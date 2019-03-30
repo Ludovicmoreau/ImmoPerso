@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h2>test</h2>
+    <div class="container">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Add an House</h5>
+                    <a href="{{ path('houseForm') }}" class="btn btn-primary btn-lg square" role="button">Ajouter une maison</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Add An Appartment</h5>
+                    <a href="{{ path('apartmentForm') }}" class="btn btn-primary btn-lg square" role="button">Ajouter un apartement</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

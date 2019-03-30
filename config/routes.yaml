@@ -1,0 +1,11 @@
+index:
+    path: /
+    controller: App\Controller\IndexAction::showIndexAction
+
+houseForm:
+    path: /house
+    controller: App\Controller\HouseAction::showHouseFormAction
+
+apartmentForm:
+    path: /apartment
+    controller: App\Controller\ApartmentAction::showApartmentFormAction
