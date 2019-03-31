@@ -49,8 +49,8 @@ class House
     protected $nearRER;
 
     /**
-     * @ORM\Column(type="boolean")
-     * @Type("boolean")
+     * @ORM\Column(type="integer")
+     * @Type("integer")
      */
     protected $travelTimeToJob;
 
@@ -63,31 +63,6 @@ class House
      * @ORM\Column(type="string", length=255)
      */
     protected $city;
-
-    /**
-     * House constructor.
-     *
-     * @param $id
-     * @param $numberOfRoom
-     * @param $superficy
-     * @param $haveWorksToDoInside
-     * @param $openKitchen
-     * @param $nearRER
-     * @param $travelTimeToJob
-     * @param $adress
-     * @param $city
-     */
-    public function __construct($numberOfRoom, $superficy, $haveWorksToDoInside, $openKitchen, $nearRER, $travelTimeToJob, $adress, $city)
-    {
-        $this->numberOfRoom        = $numberOfRoom;
-        $this->superficy           = $superficy;
-        $this->haveWorksToDoInside = $haveWorksToDoInside;
-        $this->openKitchen         = $openKitchen;
-        $this->nearRER             = $nearRER;
-        $this->travelTimeToJob     = $travelTimeToJob;
-        $this->adress              = $adress;
-        $this->city                = $city;
-    }
 
     /**
      * Get id
