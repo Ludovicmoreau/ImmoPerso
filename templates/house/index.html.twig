@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}House index{% endblock %}
+
+{% block content %}
+    <h1>House index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumberOfRoom</th>
+                <th>Superficy</th>
+                <th>HaveWorksToDoInside</th>
+                <th>OpenKitchen</th>
+                <th>NearRER</th>
+                <th>TravelTimeToJob</th>
+                <th>Adress</th>
+                <th>City</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for house in houses %}
+            <tr>
+                <td>{{ house.id }}</td>
+                <td>{{ house.numberOfRoom }}</td>
+                <td>{{ house.superficy }}</td>
+                <td>{{ house.haveWorksToDoInside ? 'Yes' : 'No' }}</td>
+                <td>{{ house.openKitchen ? 'Yes' : 'No' }}</td>
+                <td>{{ house.nearRER ? 'Yes' : 'No' }}</td>
+                <td>{{ house.travelTimeToJob ? 'Yes' : 'No' }}</td>
+                <td>{{ house.adress }}</td>
+                <td>{{ house.city }}</td>
+                <td>
+                    <a href="{{ path('house_show', {'id': house.id}) }}">show</a>
+                    <a href="{{ path('house_edit', {'id': house.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('house_new') }}">Create new</a>
+{% endblock %}
