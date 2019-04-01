@@ -7,9 +7,6 @@ class IndexAction extends AbstractController
 {
     public function showIndexAction()
     {
-
-
-
         return $this->render('index.html.twig');
     }
 }

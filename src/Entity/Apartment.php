@@ -56,8 +56,8 @@ class Apartment
     protected $nearRER;
 
     /**
-     * @ORM\Column(type="boolean")
-     * @Type("boolean")
+     * @ORM\Column(type="integer")
+     * @Type("integer")
      */
     protected $travelTimeToJob;
 
@@ -70,32 +70,6 @@ class Apartment
      * @ORM\Column(type="string", length=255)
      */
     protected $city;
-
-    /**
-     * Apartment constructor.
-     *
-     * @param $floor
-     * @param $numberOfRoom
-     * @param $superficy
-     * @param $haveWorksToDoInside
-     * @param $openKitchen
-     * @param $nearRER
-     * @param $travelTimeToJob
-     * @param $adress
-     * @param $city
-     */
-    public function __construct($floor, $numberOfRoom, $superficy, $haveWorksToDoInside, $openKitchen, $nearRER, $travelTimeToJob, $adress, $city)
-    {
-        $this->floor               = $floor;
-        $this->numberOfRoom        = $numberOfRoom;
-        $this->superficy           = $superficy;
-        $this->haveWorksToDoInside = $haveWorksToDoInside;
-        $this->openKitchen         = $openKitchen;
-        $this->nearRER             = $nearRER;
-        $this->travelTimeToJob     = $travelTimeToJob;
-        $this->adress              = $adress;
-        $this->city                = $city;
-    }
 
     /**
      * Get id
