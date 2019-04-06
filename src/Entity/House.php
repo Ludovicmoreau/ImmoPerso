@@ -65,6 +65,11 @@ class House
     protected $city;
 
     /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    protected $createdAt;
+
+    /**
      * Get id
      *
      * @return mixed
@@ -260,6 +265,30 @@ class House
     public function setCity($city)
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param mixed $createdAt
+     *
+     * @return House
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

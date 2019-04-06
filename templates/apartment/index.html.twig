@@ -5,47 +5,49 @@
 {% block content %}
     <h1>Apartment index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Floor</th>
-                <th>NumberOfRoom</th>
-                <th>Superficy</th>
-                <th>HaveWorksToDoInside</th>
-                <th>OpenKitchen</th>
-                <th>NearRER</th>
-                <th>TravelTimeToJob</th>
-                <th>Adress</th>
-                <th>City</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for apartment in apartments %}
-            <tr>
-                <td>{{ apartment.id }}</td>
-                <td>{{ apartment.floor }}</td>
-                <td>{{ apartment.numberOfRoom }}</td>
-                <td>{{ apartment.superficy }}</td>
-                <td>{{ apartment.haveWorksToDoInside ? 'Yes' : 'No' }}</td>
-                <td>{{ apartment.openKitchen ? 'Yes' : 'No' }}</td>
-                <td>{{ apartment.nearRER ? 'Yes' : 'No' }}</td>
-                <td>{{ apartment.travelTimeToJob ? 'Yes' : 'No' }}</td>
-                <td>{{ apartment.adress }}</td>
-                <td>{{ apartment.city }}</td>
-                <td>
-                    <a href="{{ path('apartment_show', {'id': apartment.id}) }}">show</a>
-                    <a href="{{ path('apartment_edit', {'id': apartment.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="bdy">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Floor</th>
+                    <th>NumberOfRoom</th>
+                    <th>Superficy</th>
+                    <th>HaveWorksToDoInside</th>
+                    <th>OpenKitchen</th>
+                    <th>NearRER</th>
+                    <th>TravelTimeToJob</th>
+                    <th>Adress</th>
+                    <th>City</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for apartment in apartments %}
+                <tr>
+                    <td>{{ apartment.id }}</td>
+                    <td>{{ apartment.floor }}</td>
+                    <td>{{ apartment.numberOfRoom }}</td>
+                    <td>{{ apartment.superficy }}</td>
+                    <td>{{ apartment.haveWorksToDoInside ? 'Yes' : 'No' }}</td>
+                    <td>{{ apartment.openKitchen ? 'Yes' : 'No' }}</td>
+                    <td>{{ apartment.nearRER ? 'Yes' : 'No' }}</td>
+                    <td>{{ apartment.travelTimeToJob ? 'Yes' : 'No' }}</td>
+                    <td>{{ apartment.adress }}</td>
+                    <td>{{ apartment.city }}</td>
+                    <td>
+                        <a href="{{ path('apartment_show', {'id': apartment.id}) }}">show</a>
+                        <a href="{{ path('apartment_edit', {'id': apartment.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="11">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
     <a href="{{ path('apartment_new') }}">Create new</a>
 {% endblock %}

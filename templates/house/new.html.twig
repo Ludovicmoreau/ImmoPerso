@@ -3,9 +3,9 @@
 {% block title %}New House{% endblock %}
 
 {% block content %}
-    <h1>Create new House</h1>
-
-    {{ include('house/_form.html.twig') }}
-
+    <div class="container bdy">
+        <h1>Create new House</h1>
+        {{ include('house/_form.html.twig') }}
+    </div>
     <a href="{{ path('house_index') }}">back to list</a>
 {% endblock %}
