@@ -70,6 +70,11 @@ class House
     protected $createdAt;
 
     /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="houses")
+     */
+    protected $user;
+
+    /**
      * Get id
      *
      * @return mixed
@@ -293,7 +298,25 @@ class House
         return $this;
     }
 
+    /**
+     * Get user
+     *
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 
+    /**
+     * @param mixed $user
+     *
+     * @return House
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
 
-
+        return $this;
+    }
 }
