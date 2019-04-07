@@ -4,11 +4,12 @@
 
 {% block content %}
     <h1>Register</h1>
+    <div class="container bdy">
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-
-        <button class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <button class="btn btn-primary">Register</button>
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
