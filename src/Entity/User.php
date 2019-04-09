@@ -35,6 +35,16 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\OneToMany(targetEntity=House::class, cascade={"persist", "remove"}, mappedBy="user")
+     */
+    private $houses;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Apartment::class, cascade={"persist", "remove"}, mappedBy="user")
+     */
+    private $appartments;
+
     public function getId(): ?int
     {
         return $this->id;

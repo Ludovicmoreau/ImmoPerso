@@ -19,9 +19,10 @@ class ApartmentController extends AbstractController
      */
     public function index(): Response
     {
+        $userId = $this->getUser()->getId();
         $apartments = $this->getDoctrine()
             ->getRepository(Apartment::class)
-            ->findAll();
+            ->findBy(['user' => $userId]);
 
         return $this->render('apartment/index.html.twig', [
             'apartments' => $apartments,
@@ -30,6 +31,7 @@ class ApartmentController extends AbstractController
 
     /**
      * @Route("/new", name="apartment_new", methods={"GET","POST"})
+     * @throws \Exception
      */
     public function new(Request $request): Response
     {
@@ -38,6 +40,8 @@ class ApartmentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $apartment->setCreatedAt(new \DateTime('now'));
+            $apartment->setUser($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($apartment);
             $entityManager->flush();
@@ -53,9 +57,14 @@ class ApartmentController extends AbstractController
 
     /**
      * @Route("/{id}", name="apartment_show", methods={"GET"})
+     * @throws \Exception
      */
     public function show(Apartment $apartment): Response
     {
+        if($this->getUser()->getId() != $apartment->getUser()->getId()) {
+            throw new \Exception('You don\'t have access to this apartment');
+        }
+
         return $this->render('apartment/show.html.twig', [
             'apartment' => $apartment,
         ]);
@@ -63,9 +72,14 @@ class ApartmentController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="apartment_edit", methods={"GET","POST"})
+     * @throws \Exception
      */
     public function edit(Request $request, Apartment $apartment): Response
     {
+        if($this->getUser()->getId() !== $apartment->getUser()->getId()) {
+            throw new \Exception('You don\'t have access to this apartment');
+        }
+
         $form = $this->createForm(Apartment1Type::class, $apartment);
         $form->handleRequest($request);
 
@@ -88,6 +102,10 @@ class ApartmentController extends AbstractController
      */
     public function delete(Request $request, Apartment $apartment): Response
     {
+        if($this->getUser()->getId() !== $apartment->getUser()->getId()) {
+            throw new \Exception('You don\'t have access to this apartment');
+        }
+
         if ($this->isCsrfTokenValid('delete'.$apartment->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($apartment);

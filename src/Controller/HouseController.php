@@ -19,9 +19,10 @@ class HouseController extends AbstractController
      */
     public function index(): Response
     {
+        $userId = $this->getUser()->getId();
         $houses = $this->getDoctrine()
             ->getRepository(House::class)
-            ->findAll();
+            ->findBy(['user' => $userId]);
 
         return $this->render('house/index.html.twig', [
             'houses' => $houses,
@@ -30,6 +31,7 @@ class HouseController extends AbstractController
 
     /**
      * @Route("/new", name="house_new", methods={"GET","POST"})
+     * @throws \Exception
      */
     public function new(Request $request): Response
     {
@@ -38,6 +40,8 @@ class HouseController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $house->setCreatedAt(new \DateTime('now'));
+            $house->setUser($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($house);
             $entityManager->flush();
@@ -56,6 +60,10 @@ class HouseController extends AbstractController
      */
     public function show(House $house): Response
     {
+        if($this->getUser()->getId() != $house->getUser()->getId()) {
+            throw new \Exception('You don\'t have access to this apartment');
+        }
+
         return $this->render('house/show.html.twig', [
             'house' => $house,
         ]);
@@ -63,9 +71,18 @@ class HouseController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="house_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param House   $house
+     *
+     * @return Response
+     * @throws \Exception
      */
     public function edit(Request $request, House $house): Response
     {
+        if($this->getUser()->getId() != $house->getUser()->getId()) {
+            throw new \Exception('You don\'t have access to this apartment');
+        }
+
         $form = $this->createForm(House1Type::class, $house);
         $form->handleRequest($request);
 
@@ -85,9 +102,18 @@ class HouseController extends AbstractController
 
     /**
      * @Route("/{id}", name="house_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param House   $house
+     *
+     * @return Response
+     * @throws \Exception
      */
     public function delete(Request $request, House $house): Response
     {
+        if($this->getUser()->getId() != $house->getUser()->getId()) {
+            throw new \Exception('You don\'t have access to this apartment');
+        }
+
         if ($this->isCsrfTokenValid('delete'.$house->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($house);

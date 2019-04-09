@@ -3,42 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}ImmoPerso{% endblock %}</title>
+
+        {% block stylesheet %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="/build/app.css">
+        {% endblock %}
+
     </head>
     <body>
         {% block content %}{% endblock %}
 
-        {% block flash %}
-            {% for flash_message in app.session.flashbag.get('success') %}
-                <div class="container alert alert-success" role="alert">
-                    {{ flash_message }}
-                </div>
-            {% endfor %}
-            {% for flash_message in app.session.flashbag.get('info') %}
-                <div class="container alert alert-info" role="alert">
-                    {{ flash_message }}
-                </div>
-            {% endfor %}
-            {% for flash_message in app.session.flashbag.get('warning') %}
-                <div class="container alert alert-warning" role="alert">
-                    {{ flash_message }}
-                </div>
-            {% endfor %}
-            {% for flash_message in app.session.flashbag.get('danger') %}
-                <div class="container alert alert-danger" role="alert">
-                    {{ flash_message }}
-                </div>
-            {% endfor %}
-        {% endblock %}
-
-
         {% block footer %}
-            <footer id="footer" class="bck1 border-top">
-                <div class="container">
-                    <a href="{{ path('index') }}" class="btn btn-primary btn-lg square" role="button">Revenir à l'acceuil</a>
-                </div>
-            </footer>
         {% endblock %}
 
         {% block javascripts %}

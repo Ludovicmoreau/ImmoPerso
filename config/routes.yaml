@@ -9,3 +9,7 @@ houseForm:
 apartmentForm:
     path: /apartment
     controller: App\Controller\ApartmentAction::showApartmentFormAction
+
+admin:
+    path: /admin
+    controller: App\Controller\AdminController::AdminAction

@@ -3,9 +3,10 @@
 {% block title %}Edit Apartment{% endblock %}
 
 {% block content %}
-    <h1>Edit Apartment</h1>
-
-    {{ include('apartment/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="container bdy">
+        <h1>Edit Apartment</h1>
+        {{ include('apartment/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
 
     <a href="{{ path('apartment_index') }}">back to list</a>
 
