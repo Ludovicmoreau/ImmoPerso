@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
     <div class="jumbotron container">
         <h1 class="display-4">Hello !</h1>
         <p class="lead">Information 1.</p>
@@ -26,6 +25,24 @@
                     <a href="{{ path('apartment_new') }}" class="btn btn-primary btn-lg square" role="button">Ajouter un apartement</a>
                 </div>
             </div>
+        </div>
+        <div class="card-group">
+        {% if houses is not empty %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">See my houses</h5>
+                    <a href="{{ path('house_index') }}" class="btn btn-primary btn-lg square" role="button">Voir la liste de mes maisons</a>
+                </div>
+            </div>
+        {% endif %}
+        {% if apartments is not empty %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">See my apartments</h5>
+                    <a href="{{ path('apartment_index') }}" class="btn btn-primary btn-lg square" role="button">Voir la liste de mes appartements</a>
+                </div>
+            </div>
+        {% endif %}
         </div>
     </div>
 {% endblock %}

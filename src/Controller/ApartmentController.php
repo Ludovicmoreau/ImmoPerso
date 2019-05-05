@@ -99,6 +99,7 @@ class ApartmentController extends AbstractController
 
     /**
      * @Route("/{id}", name="apartment_delete", methods={"DELETE"})
+     * @throws \Exception
      */
     public function delete(Request $request, Apartment $apartment): Response
     {
