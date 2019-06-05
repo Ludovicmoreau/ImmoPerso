@@ -26,5 +26,4 @@ class IndexAction extends AbstractController
 
 // Lien vers Annonce immbiliere
 // Priorité
-// Si achat suppression
 //Ajout de photos pour les biens

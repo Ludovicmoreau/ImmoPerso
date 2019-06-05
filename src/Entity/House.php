@@ -75,6 +75,12 @@ class House
     protected $user;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Type("integer")
+     */
+    protected $priority;
+
+    /**
      * Get id
      *
      * @return mixed
@@ -319,4 +325,27 @@ class House
 
         return $this;
     }
+
+    /**
+     * Get priority
+     *
+     * @return int|null
+     */
+    public function getPriority() : ?int
+    {
+        return $this->priority;
+    }
+
+    /**
+     * @param mixed $priority
+     *
+     * @return House
+     */
+    public function setPriority($priority) : House
+    {
+        $this->priority = $priority;
+
+        return $this;
+    }
+
 }

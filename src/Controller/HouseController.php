@@ -110,7 +110,7 @@ class HouseController extends AbstractController
      */
     public function delete(Request $request, House $house): Response
     {
-        if($this->getUser()->getId() != $house->getUser()->getId()) {
+        if($this->getUser()->getId() !== $house->getUser()->getId()) {
             throw new \Exception('You don\'t have access to this apartment');
         }
 

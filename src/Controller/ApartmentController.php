@@ -22,7 +22,7 @@ class ApartmentController extends AbstractController
         $userId = $this->getUser()->getId();
         $apartments = $this->getDoctrine()
             ->getRepository(Apartment::class)
-            ->findBy(['user' => $userId]);
+            ->findBy(['user' => $userId], ['priority' => 'ASC']);
 
         return $this->render('apartment/index.html.twig', [
             'apartments' => $apartments,

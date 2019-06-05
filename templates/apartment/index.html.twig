@@ -19,6 +19,7 @@
                     <th>TravelTimeToJob</th>
                     <th>Adress</th>
                     <th>City</th>
+                    <th>Priority</th>
                     <th>actions</th>
                 </tr>
             </thead>
@@ -35,6 +36,7 @@
                     <td>{{ apartment.travelTimeToJob ? 'Yes' : 'No' }}</td>
                     <td>{{ apartment.adress }}</td>
                     <td>{{ apartment.city }}</td>
+                    <td>{{ apartment.priority }}</td>
                     <td>
 
                         <a href="{{ path('apartment_show', {'id': apartment.id}) }}"><i class="far fa-eye"></i></a>
