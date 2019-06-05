@@ -6,7 +6,7 @@
     <h1>{{ 'Apartment index' | trans }}</h1>
 
     <div class="bdy">
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -36,8 +36,9 @@
                     <td>{{ apartment.adress }}</td>
                     <td>{{ apartment.city }}</td>
                     <td>
-                        <a href="{{ path('apartment_show', {'id': apartment.id}) }}">show</a>
-                        <a href="{{ path('apartment_edit', {'id': apartment.id}) }}">edit</a>
+
+                        <a href="{{ path('apartment_show', {'id': apartment.id}) }}"><i class="far fa-eye"></i></a>
+                        <a href="{{ path('apartment_edit', {'id': apartment.id}) }}"><i class="fas fa-pencil-alt"></i></a>
                     </td>
                 </tr>
             {% else %}
