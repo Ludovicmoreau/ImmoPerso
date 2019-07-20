@@ -1,0 +1,52 @@
+parameters:
+    git_dir: .
+    bin_dir: vendor/bin
+    tasks:
+        phpcs:
+            standard: []
+            severity: ~
+            error_severity: ~
+            warning_severity: ~
+            tab_width: ~
+            report: full
+            report_width: ~
+            whitelist_patterns: []
+            encoding: ~
+            ignore_patterns: []
+            sniffs: []
+            triggered_by: [php]
+            exclude: []
+        securitychecker:
+            lockfile: ./composer.lock
+            format: ~
+            end_point: ~
+            timeout: ~
+            run_always: false
+        phpstan:
+            autoload_file: ~
+            configuration: ~
+            level: 0
+            force_patterns: []
+            ignore_patterns: []
+            triggered_by: ['php']
+            memory_limit: ~
+        phpcsfixer:
+            config_file: ~
+            config: ~
+            fixers: []
+            level: ~
+            verbose: true
+        phpcsfixer2:
+            allow_risky: ~
+            cache_file: ~
+            config: ~
+            rules: []
+            using_cache: ~
+            config_contains_finder: true
+            verbose: true
+            diff: false
+            triggered_by: ['php']
+        doctrine_orm:
+            skip_mapping: false
+            skip_sync: false
+            triggered_by: ['php', 'xml', 'yml']
