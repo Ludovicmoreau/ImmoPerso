@@ -10,7 +10,6 @@ use Symfony\Component\Validator\Constraints\Type;
  */
 class Apartment
 {
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -23,7 +22,6 @@ class Apartment
      * @Type("integer")
      */
     protected $floor;
-
 
     /**
      * @ORM\Column(type="integer")
@@ -88,7 +86,7 @@ class Apartment
     protected $priority;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return mixed
      */
@@ -98,7 +96,7 @@ class Apartment
     }
 
     /**
-     * Set id
+     * Set id.
      *
      * @param mixed $id
      *
@@ -112,7 +110,7 @@ class Apartment
     }
 
     /**
-     * Get floor
+     * Get floor.
      *
      * @return mixed
      */
@@ -122,7 +120,7 @@ class Apartment
     }
 
     /**
-     * Set floor
+     * Set floor.
      *
      * @param mixed $floor
      *
@@ -136,7 +134,7 @@ class Apartment
     }
 
     /**
-     * Get numberOfRoom
+     * Get numberOfRoom.
      *
      * @return mixed
      */
@@ -146,7 +144,7 @@ class Apartment
     }
 
     /**
-     * Set numberOfRoom
+     * Set numberOfRoom.
      *
      * @param mixed $numberOfRoom
      *
@@ -160,7 +158,7 @@ class Apartment
     }
 
     /**
-     * Get superficy
+     * Get superficy.
      *
      * @return mixed
      */
@@ -170,7 +168,7 @@ class Apartment
     }
 
     /**
-     * Set superficy
+     * Set superficy.
      *
      * @param mixed $superficy
      *
@@ -184,7 +182,7 @@ class Apartment
     }
 
     /**
-     * Get haveWorksToDoInside
+     * Get haveWorksToDoInside.
      *
      * @return mixed
      */
@@ -194,7 +192,7 @@ class Apartment
     }
 
     /**
-     * Set haveWorksToDoInside
+     * Set haveWorksToDoInside.
      *
      * @param mixed $haveWorksToDoInside
      *
@@ -208,7 +206,7 @@ class Apartment
     }
 
     /**
-     * Get openKitchen
+     * Get openKitchen.
      *
      * @return mixed
      */
@@ -218,7 +216,7 @@ class Apartment
     }
 
     /**
-     * Set openKitchen
+     * Set openKitchen.
      *
      * @param mixed $openKitchen
      *
@@ -232,7 +230,7 @@ class Apartment
     }
 
     /**
-     * Get nearRER
+     * Get nearRER.
      *
      * @return mixed
      */
@@ -242,7 +240,7 @@ class Apartment
     }
 
     /**
-     * Set nearRER
+     * Set nearRER.
      *
      * @param mixed $nearRER
      *
@@ -256,7 +254,7 @@ class Apartment
     }
 
     /**
-     * Get travelTimeToJob
+     * Get travelTimeToJob.
      *
      * @return mixed
      */
@@ -266,7 +264,7 @@ class Apartment
     }
 
     /**
-     * Set travelTimeToJob
+     * Set travelTimeToJob.
      *
      * @param mixed $travelTimeToJob
      *
@@ -280,7 +278,7 @@ class Apartment
     }
 
     /**
-     * Get adress
+     * Get adress.
      *
      * @return mixed
      */
@@ -290,7 +288,7 @@ class Apartment
     }
 
     /**
-     * Set adress
+     * Set adress.
      *
      * @param mixed $adress
      *
@@ -304,7 +302,7 @@ class Apartment
     }
 
     /**
-     * Get city
+     * Get city.
      *
      * @return mixed
      */
@@ -314,7 +312,7 @@ class Apartment
     }
 
     /**
-     * Set city
+     * Set city.
      *
      * @param mixed $city
      *
@@ -328,7 +326,7 @@ class Apartment
     }
 
     /**
-     * Get createdAt
+     * Get createdAt.
      *
      * @return mixed
      */
@@ -338,7 +336,7 @@ class Apartment
     }
 
     /**
-     * Set createdAt
+     * Set createdAt.
      *
      * @param mixed $createdAt
      *
@@ -352,7 +350,7 @@ class Apartment
     }
 
     /**
-     * Get user
+     * Get user.
      *
      * @return mixed
      */
@@ -392,5 +390,4 @@ class Apartment
 
         return $this;
     }
-
 }

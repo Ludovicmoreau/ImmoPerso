@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -79,7 +80,7 @@ class House
     protected $priority;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return mixed
      */
@@ -100,10 +101,8 @@ class House
         return $this;
     }
 
-
-
     /**
-     * Get numberOfRoom
+     * Get numberOfRoom.
      *
      * @return int
      */
@@ -125,7 +124,7 @@ class House
     }
 
     /**
-     * Get superficy
+     * Get superficy.
      *
      * @return int
      */
@@ -147,7 +146,7 @@ class House
     }
 
     /**
-     * Get haveWorksToDoInside
+     * Get haveWorksToDoInside.
      *
      * @return bool
      */
@@ -169,7 +168,7 @@ class House
     }
 
     /**
-     * Get openKitchen
+     * Get openKitchen.
      *
      * @return bool
      */
@@ -191,7 +190,7 @@ class House
     }
 
     /**
-     * Get nearRER
+     * Get nearRER.
      *
      * @return bool
      */
@@ -213,7 +212,7 @@ class House
     }
 
     /**
-     * Get travelTimeToJob
+     * Get travelTimeToJob.
      *
      * @return int
      */
@@ -235,7 +234,7 @@ class House
     }
 
     /**
-     * Get adress
+     * Get adress.
      *
      * @return mixed
      */
@@ -257,7 +256,7 @@ class House
     }
 
     /**
-     * Get city
+     * Get city.
      *
      * @return mixed
      */
@@ -279,7 +278,7 @@ class House
     }
 
     /**
-     * Get createdAt
+     * Get createdAt.
      *
      * @return mixed
      */
@@ -289,7 +288,7 @@ class House
     }
 
     /**
-     * Set createdAt
+     * Set createdAt.
      *
      * @param mixed $createdAt
      *
@@ -303,7 +302,7 @@ class House
     }
 
     /**
-     * Get user
+     * Get user.
      *
      * @return mixed
      */
@@ -340,7 +339,7 @@ class House
     public function setPriority($priority): House
     {
         $this->priority = $priority;
+
         return $this;
     }
-
 }
