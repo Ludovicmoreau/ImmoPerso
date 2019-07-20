@@ -93,6 +93,18 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "friendsofphp/php-cs-fixer": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "cc05ab6abf6894bddb9bbd6a252459010ebe040b"
+        },
+        "files": [
+            ".php_cs.dist"
+        ]
+    },
     "gitonomy/gitlib": {
         "version": "v1.1.0"
     },
@@ -140,6 +152,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.2"
+    },
+    "php-cs-fixer/diff": {
+        "version": "v1.3.0"
     },
     "phpro/grumphp": {
         "version": "v0.15.2"

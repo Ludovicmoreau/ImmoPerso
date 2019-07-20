@@ -30,3 +30,23 @@ parameters:
             ignore_patterns: []
             triggered_by: ['php']
             memory_limit: ~
+        phpcsfixer:
+            config_file: ~
+            config: ~
+            fixers: []
+            level: ~
+            verbose: true
+        phpcsfixer2:
+            allow_risky: ~
+            cache_file: ~
+            config: ~
+            rules: []
+            using_cache: ~
+            config_contains_finder: true
+            verbose: true
+            diff: false
+            triggered_by: ['php']
+        doctrine_orm:
+            skip_mapping: false
+            skip_sync: false
+            triggered_by: ['php', 'xml', 'yml']
