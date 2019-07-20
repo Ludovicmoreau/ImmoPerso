@@ -46,7 +46,4 @@ parameters:
             verbose: true
             diff: false
             triggered_by: ['php']
-        doctrine_orm:
-            skip_mapping: false
-            skip_sync: false
-            triggered_by: ['php', 'xml', 'yml']
+
