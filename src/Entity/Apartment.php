@@ -82,7 +82,7 @@ class Apartment
     protected $user;
 
     /**
-     * @ORM\Column(type="integer", nullable= false)
+     * @ORM\Column(type="integer")
      * @Type("integer")
      */
     protected $priority;
@@ -374,9 +374,9 @@ class Apartment
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getPriority(): int
+    public function getPriority()
     {
         return $this->priority;
     }

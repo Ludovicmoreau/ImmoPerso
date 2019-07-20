@@ -9,8 +9,6 @@ use Symfony\Component\Validator\Constraints\Type;
  */
 class House
 {
-    //Add createdAt
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -327,11 +325,9 @@ class House
     }
 
     /**
-     * Get priority
-     *
-     * @return int
+     * @return mixed
      */
-    public function getPriority() : int
+    public function getPriority()
     {
         return $this->priority;
     }
@@ -341,10 +337,9 @@ class House
      *
      * @return House
      */
-    public function setPriority($priority) : House
+    public function setPriority($priority): House
     {
         $this->priority = $priority;
-
         return $this;
     }
 
