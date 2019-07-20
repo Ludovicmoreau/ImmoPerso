@@ -75,7 +75,7 @@ class House
     protected $user;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=false)
      * @Type("integer")
      */
     protected $priority;
@@ -329,9 +329,9 @@ class House
     /**
      * Get priority
      *
-     * @return int|null
+     * @return int
      */
-    public function getPriority() : ?int
+    public function getPriority() : int
     {
         return $this->priority;
     }
