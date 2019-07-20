@@ -20,6 +20,7 @@ class House1Type extends AbstractType
             ->add('travelTimeToJob')
             ->add('adress')
             ->add('city')
+            ->add('priority')
         ;
     }
 

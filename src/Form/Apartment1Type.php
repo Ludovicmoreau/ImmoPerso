@@ -21,6 +21,7 @@ class Apartment1Type extends AbstractType
             ->add('travelTimeToJob')
             ->add('adress')
             ->add('city')
+            ->add('priority')
         ;
     }
 
