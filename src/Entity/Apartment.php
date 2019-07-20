@@ -82,6 +82,12 @@ class Apartment
     protected $user;
 
     /**
+     * @ORM\Column(type="integer", nullable= true)
+     * @Type("integer")
+     */
+    protected $priority;
+
+    /**
      * Get id
      *
      * @return mixed
@@ -338,7 +344,7 @@ class Apartment
      *
      * @return Apartment
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($createdAt): self
     {
         $this->createdAt = $createdAt;
 
@@ -363,6 +369,26 @@ class Apartment
     public function setUser($user)
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    /**
+     * @param int $priority
+     *
+     * @return Apartment
+     */
+    public function setPriority($priority)
+    {
+        $this->priority = $priority;
 
         return $this;
     }

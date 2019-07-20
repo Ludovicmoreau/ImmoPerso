@@ -22,7 +22,7 @@ class ApartmentController extends AbstractController
         $userId = $this->getUser()->getId();
         $apartments = $this->getDoctrine()
             ->getRepository(Apartment::class)
-            ->findBy(['user' => $userId]);
+            ->findBy(['user' => $userId], ['priority' => 'ASC']);
 
         return $this->render('apartment/index.html.twig', [
             'apartments' => $apartments,
@@ -99,6 +99,7 @@ class ApartmentController extends AbstractController
 
     /**
      * @Route("/{id}", name="apartment_delete", methods={"DELETE"})
+     * @throws \Exception
      */
     public function delete(Request $request, Apartment $apartment): Response
     {

@@ -39,11 +39,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Vous n'avez pas encore de maisons !</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
-    <a href="{{ path('house_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('house_new') }}">Create new</a>
 {% endblock %}
