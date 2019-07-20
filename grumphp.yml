@@ -16,3 +16,17 @@ parameters:
             sniffs: []
             triggered_by: [php]
             exclude: []
+        securitychecker:
+            lockfile: ./composer.lock
+            format: ~
+            end_point: ~
+            timeout: ~
+            run_always: false
+        phpstan:
+            autoload_file: ~
+            configuration: ~
+            level: 0
+            force_patterns: []
+            ignore_patterns: []
+            triggered_by: ['php']
+            memory_limit: ~

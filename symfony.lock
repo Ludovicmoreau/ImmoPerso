@@ -99,11 +99,38 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "jean85/pretty-package-versions": {
+        "version": "1.2"
+    },
     "justinrainbow/json-schema": {
         "version": "5.2.8"
     },
     "monolog/monolog": {
         "version": "1.24.0"
+    },
+    "nette/bootstrap": {
+        "version": "v3.0.0"
+    },
+    "nette/di": {
+        "version": "v3.0.0"
+    },
+    "nette/finder": {
+        "version": "v2.5.0"
+    },
+    "nette/neon": {
+        "version": "v3.0.0"
+    },
+    "nette/php-generator": {
+        "version": "v3.2.3"
+    },
+    "nette/robot-loader": {
+        "version": "v3.2.0"
+    },
+    "nette/schema": {
+        "version": "v1.0.0"
+    },
+    "nette/utils": {
+        "version": "v3.0.1"
     },
     "nikic/php-parser": {
         "version": "v4.2.1"
@@ -116,6 +143,12 @@
     },
     "phpro/grumphp": {
         "version": "v0.15.2"
+    },
+    "phpstan/phpdoc-parser": {
+        "version": "0.3.5"
+    },
+    "phpstan/phpstan": {
+        "version": "0.11.12"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -145,6 +178,18 @@
         },
         "files": [
             "config/packages/sensio_framework_extra.yaml"
+        ]
+    },
+    "sensiolabs/security-checker": {
+        "version": "4.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.0",
+            "ref": "05daf6b214e54aed4089f3480f944a67ac3a7889"
+        },
+        "files": [
+            "config/packages/security_checker.yaml"
         ]
     },
     "squizlabs/php_codesniffer": {
@@ -239,6 +284,9 @@
             "src/Kernel.php"
         ]
     },
+    "symfony/http-client": {
+        "version": "v4.3.2"
+    },
     "symfony/http-foundation": {
         "version": "v4.2.4"
     },
@@ -260,6 +308,9 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/mime": {
+        "version": "v4.3.2"
+    },
     "symfony/options-resolver": {
         "version": "v4.2.4"
     },
@@ -269,10 +320,16 @@
     "symfony/polyfill-intl-icu": {
         "version": "v1.11.0"
     },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.11.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
     },
     "symfony/polyfill-php72": {
+        "version": "v1.11.0"
+    },
+    "symfony/polyfill-php73": {
         "version": "v1.11.0"
     },
     "symfony/process": {
